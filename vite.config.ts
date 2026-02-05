@@ -22,7 +22,7 @@ export default defineConfig(({ mode }) => {
         }
       },
       // GitHub Pages configuration
-      base: isProduction ? '/GFB-insulation/' : '/',
+      base: isProduction ? '/GFB-insulation-website/' : '/',
       build: {
         outDir: 'dist',
         sourcemap: !isProduction,
