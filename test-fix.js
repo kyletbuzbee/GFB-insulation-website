@@ -1,10 +1,10 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
 
 console.log('=== GFB-insulation-website Fix Verification ===\n');
 
 // Check if all required dist files exist
-const distPath = path.join(__dirname, 'dist');
+const distPath = path.join(process.cwd(), 'dist');
 const distFiles = fs.readdirSync(distPath);
 
 console.log('1. Checking dist folder structure:');
