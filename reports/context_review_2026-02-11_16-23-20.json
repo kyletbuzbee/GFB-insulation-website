@@ -1,0 +1,486 @@
+{
+  "context": {
+    "project_name": "Project",
+    "description": "Code review analysis",
+    "tech_stack": [
+      "React",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
+    "architecture_layers": {},
+    "dependency_map": {
+      "App.tsx": [],
+      "index.tsx": [],
+      "postcss.config.js": [],
+      "tailwind.config.js": [],
+      "test-fix.js": [],
+      "types.ts": [],
+      "vite.config.ts": [],
+      "components\\Footer.tsx": [],
+      "components\\Navbar.tsx": [],
+      "components\\SectionDividers.tsx": [],
+      "constants\\images.ts": [],
+      "constants\\theme.ts": [],
+      "pages\\About.tsx": [],
+      "pages\\Contact.tsx": [],
+      "pages\\Home.tsx": [],
+      "pages\\NotFound.tsx": [],
+      "pages\\Privacy.tsx": [],
+      "pages\\Reviews.tsx": [],
+      "pages\\Services.tsx": [],
+      "pages\\Terms.tsx": [],
+      "pages\\Thanks.tsx": [],
+      "src\\App.tsx": [],
+      "src\\main.tsx": [],
+      "src\\types.ts": [],
+      "src\\components\\Footer.tsx": [],
+      "src\\components\\Navbar.tsx": [],
+      "src\\components\\SectionDividers.tsx": [],
+      "src\\pages\\About.tsx": [],
+      "src\\pages\\Contact.tsx": [],
+      "src\\pages\\Home.tsx": [],
+      "src\\pages\\NotFound.tsx": [],
+      "src\\pages\\Privacy.tsx": [],
+      "src\\pages\\Reviews.tsx": [],
+      "src\\pages\\Services.tsx": [],
+      "src\\pages\\Terms.tsx": [],
+      "src\\pages\\Thanks.tsx": []
+    }
+  },
+  "analysis": {
+    "timestamp": "2026-02-11T16:23:20.118275",
+    "project_root": "D:\\GFB-insulation-website",
+    "files": [
+      {
+        "path": "App.tsx",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "import React, { useEffect, useState } from 'react';\nimport { HashRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';\nimport Navbar from './components/Navbar';\nimport Footer from './components/Footer';\nimport Home from './pages/Home';\nimport Services from './pages/Services';\nimport Reviews from './pages/Reviews';\nimport Contact from './pages/Contact';\nimport Thanks from './pages/Thanks';\nimport About from './pages/About';\nimport Privacy from './pages/Privacy';\nimport Terms from './pages/Terms';\nimport NotFound from './pages/NotFound';\n\n// Scroll to top wrapper\nconst ScrollToTop = () => {\n  const { pathname } = useLocation();\n  useEffect(() => {\n    window.scrollTo(0, 0);\n  }, [pathname]);\n  return null;\n};\n\n// Scroll to top button component\nconst ScrollToTopButton: React.FC = () => {\n  const [isVisible, setIsVisible] = useState(false);\n\n  useEffect(() => {\n    const toggleVisibility = () => {\n      if (window.scrollY > 500) {\n        setIsVisible(true);\n   "
+      },
+      {
+        "path": "index.tsx",
+        "violations": [],
+        "summary": "import React from 'react';\nimport ReactDOM from 'react-dom/client';\nimport App from './App';\nimport './index.css';\n\nconst rootElement = document.getElementById('root');\nif (!rootElement) {\n  throw new Error(\"Could not find root element to mount to\");\n}\n\nconst root = ReactDOM.createRoot(rootElement);\nroot.render(\n  <React.StrictMode>\n    <App />\n  </React.StrictMode>\n);"
+      },
+      {
+        "path": "postcss.config.js",
+        "violations": [],
+        "summary": "export default {\n  plugins: {\n    '@tailwindcss/postcss': {},\n  },\n}"
+      },
+      {
+        "path": "tailwind.config.js",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Hardcoded hex color detected. Consider using theme constants or CSS variables."
+          },
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "/** @type {import('tailwindcss').Config} */\nexport default {\n  content: [\n    \"./index.html\",\n    \"./src/**/*.{js,ts,jsx,tsx}\",\n    \"./components/**/*.{js,ts,jsx,tsx}\",\n    \"./pages/**/*.{js,ts,jsx,tsx}\",\n    \"./App.tsx\",\n    \"./index.tsx\"\n  ],\n  theme: {\n    extend: {\n      fontFamily: {\n        sans: ['Roboto', 'sans-serif'],\n        heading: ['Montserrat', 'sans-serif'],\n      },\n      colors: {\n        gfb: {\n          amber: '#FBB03B',\n          orange: '#C67E22',\n          silver: '#E6E7E8',\n          black: '#000000',\n        },\n        primary: {\n          DEFAULT: '#D68C23',\n          hover: '#C67E22',\n          dark: '#A56D1A',\n        },\n        secondary: {\n          DEFAULT: '#333333',\n          hover: '#2D2D2D',\n          dark: '#272727',\n        },\n        text: {\n          DEFAULT: '#1A1A1A',\n          muted: '#4A4A4A',\n          light: '#6B6B6B',\n        },\n        background: {\n          DEFAULT: '#FFFFFF',\n          alt: '#F5F5F5',\n        },\n        dark: {\n        "
+      },
+      {
+        "path": "test-fix.js",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "CLEAN_CODE",
+            "message": "Console statement detected. Remove debug logs before production or use proper logging service."
+          }
+        ],
+        "summary": "import fs from 'fs';\nimport path from 'path';\n\nconsole.log('=== GFB-insulation-website Fix Verification ===\\n');\n\n// Check if all required dist files exist\nconst distPath = path.join(process.cwd(), 'dist');\nconst distFiles = fs.readdirSync(distPath);\n\nconsole.log('1. Checking dist folder structure:');\nconsole.log('   - Dist folder contains:', distFiles.join(', '));\n\n// Check assets folder\nconst assetsPath = path.join(distPath, 'assets');\nconst assetsFiles = fs.readdirSync(assetsPath);\n\nconsole.log('\\n2. Checking assets folder:');\nconsole.log('   - Assets contain:', assetsFiles.join(', '));\n\n// Check if index.css is properly bundled in assets\nconst cssFile = assetsFiles.find(file => file.endsWith('.css'));\nconsole.log(`\\n3. CSS file found: ${cssFile}`);\nif (cssFile) {\n  const cssContent = fs.readFileSync(path.join(assetsPath, cssFile), 'utf8');\n  console.log(`   - Size: ${cssContent.length} bytes`);\n  console.log(`   - Contains Tailwind CSS: ${cssContent.includes('@tailwind')}`);\n}\n\n// "
+      },
+      {
+        "path": "types.ts",
+        "violations": [],
+        "summary": "export interface NavItem {\n  label: string;\n  path: string;\n}\n\nexport interface ServiceItem {\n  id: string;\n  title: string;\n  description: string;\n  image: string;\n  features: string[];\n  gridArea?: string; // For Bento grid layout control\n}\n\nexport interface Review {\n  id: number;\n  name: string;\n  role: string;\n  rating: number;\n  text: string;\n  date: string;\n}\n\nexport enum FormStatus {\n  IDLE = 'IDLE',\n  SUBMITTING = 'SUBMITTING',\n  SUCCESS = 'SUCCESS',\n  ERROR = 'ERROR'\n}"
+      },
+      {
+        "path": "vite.config.ts",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "import path from 'path';\nimport { defineConfig, loadEnv } from 'vite';\nimport react from '@vitejs/plugin-react';\n\nexport default defineConfig(({ mode }) => {\n    const env = loadEnv(mode, '.', '');\n    const isProduction = mode === 'production';\n    \n    return {\n      server: {\n        port: 3000,\n        host: '0.0.0.0',\n      },\n      plugins: [react()],\n      define: {\n        'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),\n        'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY)\n      },\n      resolve: {\n        alias: {\n          '@': path.resolve(__dirname, './src'),\n        }\n      },\n      // GitHub Pages configuration\n      base: isProduction ? '/GFB-insulation-website/' : '/',\n      build: {\n        outDir: 'dist',\n        sourcemap: !isProduction,\n        rollupOptions: {\n          output: {\n            manualChunks: {\n              vendor: ['react', 'react-dom'],\n              router: ['react-router-dom']\n            }\n          }\n        }\n     "
+      },
+      {
+        "path": "components\\Footer.tsx",
+        "violations": [
+          {
+            "severity": "HIGH",
+            "type": "ACCESSIBILITY",
+            "message": "Image missing alt text. Provide meaningful alt attributes for screen reader accessibility."
+          },
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "import React from 'react';\nimport { Mail, Phone, MapPin, Award, CheckCircle, Users } from 'lucide-react';\n\nconst Footer: React.FC = () => {\n  return (\n    <footer className=\"bg-dark border-t border-white/10 pt-16 pb-12\">\n      <div className=\"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8\">\n        <div className=\"grid grid-cols-1 md:grid-cols-4 gap-8 mb-12\">\n          {/* Brand */}\n          <div className=\"md:col-span-1 space-y-4\">\n            <img \n              src=\"/brand-logo.jpeg\" \n              alt=\"GFB Insulation Logo\" \n              className=\"h-20 w-auto object-contain\"\n            />\n            <p className=\"text-text-light text-sm leading-relaxed max-w-xs\">\n              Providing top-tier energy efficiency solutions for East Texas homes and businesses. Licensed and Insured.\n            </p>\n            <div className=\"flex space-x-2\">\n              <div className=\"px-2 py-1 rounded border border-primary/30 bg-primary/10 text-xs text-primary font-medium\">\n                BBB Accr"
+      },
+      {
+        "path": "components\\Navbar.tsx",
+        "violations": [
+          {
+            "severity": "HIGH",
+            "type": "ACCESSIBILITY",
+            "message": "Image missing alt text. Provide meaningful alt attributes for screen reader accessibility."
+          },
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "import React, { useState, useEffect } from 'react';\nimport { NavLink } from 'react-router-dom';\nimport { Menu, X } from 'lucide-react';\nimport { NavItem } from '../types';\n\nconst navItems: NavItem[] = [\n  { label: 'Home', path: '/' },\n  { label: 'Services', path: '/services' },\n  { label: 'About', path: '/about' },\n  { label: 'Reviews', path: '/reviews' },\n  { label: 'Contact', path: '/contact' },\n];\n\nconst Navbar: React.FC = () => {\n  const [isOpen, setIsOpen] = useState(false);\n  const [scrolled, setScrolled] = useState(false);\n\n  useEffect(() => {\n    const handleScroll = () => {\n      setScrolled(window.scrollY > 20);\n    };\n    window.addEventListener('scroll', handleScroll);\n    return () => window.removeEventListener('scroll', handleScroll);\n  }, []);\n\n  const navClass = `fixed w-full z-50 transition-all duration-300 ${\n    scrolled || isOpen\n      ? 'bg-dark/95 backdrop-blur-xl shadow-xl border-b border-white/10'\n      : 'bg-dark/60 backdrop-blur-md'\n  }`;\n\n  return (\n    <nav "
+      },
+      {
+        "path": "components\\SectionDividers.tsx",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "import React from 'react';\n\nexport const SubtleLineDivider: React.FC = () => {\n  return (\n    <div className=\"w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent\" />\n  );\n};\n\nexport const DecorativeWaveDivider: React.FC = () => {\n  return (\n    <div className=\"relative h-16 overflow-hidden\">\n      <div className=\"absolute inset-0 bg-gradient-to-b from-dark/50 to-transparent\" />\n      <svg \n        className=\"absolute bottom-0 w-full\" \n        viewBox=\"0 0 1200 120\" \n        preserveAspectRatio=\"none\"\n      >\n        <path \n          d=\"M0,120 C300,80 600,100 900,60 C1050,40 1200,80 L1200,120 L0,120 Z\" \n          fill=\"currentColor\" \n          className=\"text-dark/30\" \n        />\n      </svg>\n    </div>\n  );\n};\n\ninterface IconDividerProps {\n  icon: React.ReactNode;\n  label?: string;\n}\n\nexport const IconDivider: React.FC<IconDividerProps> = ({ icon, label }) => {\n  return (\n    <div className=\"flex items-center justify-center py-8\">\n      <div className=\"w-16 h-px b"
+      },
+      {
+        "path": "constants\\images.ts",
+        "violations": [],
+        "summary": "export const BRAND_LOGO = '/brand-logo.jpeg' as const;\nexport const FAVICON = '/favicon.svg' as const;\n\nexport type ImageKey = typeof BRAND_LOGO | typeof FAVICON;\n\nexport const images = {\n  BRAND_LOGO,\n  FAVICON,\n} as const;\n\nexport const getImagePath = (key: ImageKey): string => {\n  return images[key];\n};"
+      },
+      {
+        "path": "constants\\theme.ts",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "/**\n * GFB Insulation/Construction Company Color Palette\n * \n * Color Mapping:\n * - Primary: GFB Amber (#FBB03B) - Main brand color for CTAs, icons, and accents\n * - Secondary: Charcoal Gray (#333333) - For navigation, form fields, and secondary elements\n * - Text: Off-Black (#1A1A1A) - For main text on light backgrounds\n * - Background: Clean White (#FFFFFF) - Main page background\n * - Dark: Dark Charcoal (#121212) - For dark mode and logo background\n * - Accent: Slate Blue (#2C3E50) - For certifications, borders, and reliability sections\n * \n * Typography:\n * - Headings: Montserrat (Bold)\n * - Body: Roboto (Regular)\n * - Fine print: Roboto (Thin)\n */\n\n// Logo Colors\nexport const LOGO_COLORS = {\n  primary: '#D68C23',      // GFB Amber (darker for less bright appearance)\n  secondary: '#C67E22',    // Deep Orange\n  silver: '#E6E7E8',       // Off-White/Silver\n  black: '#000000',        // Pure Black\n};\n\n// Website Theme Palette\nexport const THEME_COLORS = {\n  primary: {\n    DEFAULT: '#D"
+      },
+      {
+        "path": "pages\\About.tsx",
+        "violations": [
+          {
+            "severity": "HIGH",
+            "type": "ACCESSIBILITY",
+            "message": "Image missing alt text. Provide meaningful alt attributes for screen reader accessibility."
+          },
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "import React from 'react';\nimport { ShieldCheck, Users, MapPin, Award, Clock, Truck, ArrowRight, Zap } from 'lucide-react';\nimport { SubtleLineDivider, DecorativeWaveDivider, IconDivider } from '../components/SectionDividers';\n\nconst About: React.FC = () => {\n  return (\n    <div className=\"min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto\">\n      <div className=\"text-center mb-20\">\n        <h2 className=\"text-primary font-semibold tracking-wider uppercase text-sm mb-4\">Our Story</h2>\n        <h1 className=\"text-4xl md:text-5xl font-bold text-white mb-8 leading-tight\">Family-Owned Insulation Experts</h1>\n        <p className=\"text-text-light max-w-2xl mx-auto text-lg leading-[1.6]\">\n          Serving East Texas with quality insulation solutions since 2015. We're your neighbors, committed to making your home more comfortable and energy-efficient.\n        </p>\n      </div>\n\n      {/* Our Story Section */}\n      <section className=\"mb-28\">\n        <div className=\"grid grid-co"
+      },
+      {
+        "path": "pages\\Contact.tsx",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "import React, { useState } from 'react';\nimport { Mail, Phone, MapPin, Send, Clock, Calendar, CheckCircle, ArrowRight, Navigation, CheckCircle2, XCircle, Zap } from 'lucide-react';\nimport { SubtleLineDivider, DecorativeWaveDivider, IconDivider } from '../components/SectionDividers';\n\nconst Contact: React.FC = () => {\n  const [formState, setFormState] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');\n\n  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {\n    e.preventDefault();\n    setFormState('submitting');\n    \n    const form = e.currentTarget;\n    const formData = new FormData(form);\n    \n    try {\n      const response = await fetch(form.action, {\n        method: 'POST',\n        body: formData,\n        headers: {\n          'Accept': 'application/json'\n        }\n      });\n      \n      if (response.ok) {\n        setFormState('success');\n        form.reset();\n        setTimeout(() => setFormState('idle'), 5000);\n      } else {\n        setFormState('erro"
+      },
+      {
+        "path": "pages\\Home.tsx",
+        "violations": [
+          {
+            "severity": "HIGH",
+            "type": "ACCESSIBILITY",
+            "message": "Image missing alt text. Provide meaningful alt attributes for screen reader accessibility."
+          },
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "import React, { useState, useEffect } from 'react';\nimport { Link } from 'react-router-dom';\nimport { ArrowRight, CheckCircle2, Zap, DollarSign, ThermometerSnowflake, Wind, TrendingUp, Home as HomeIcon, Users, Droplet, Clock, Shield, ShieldCheck, AlertTriangle } from 'lucide-react';\nimport { SubtleLineDivider, DecorativeWaveDivider, IconDivider } from '../components/SectionDividers';\n\nconst Home: React.FC = () => {\n  const [savingsCount, setSavingsCount] = useState(0);\n\n  useEffect(() => {\n    const observer = new IntersectionObserver(\n      ([entry]) => {\n        if (entry.isIntersecting) {\n          const target = 500;\n          const duration = 2000;\n          const increment = target / (duration / 16);\n          const timer = setInterval(() => {\n            setSavingsCount(prev => {\n              const next = prev + increment;\n              if (next >= target) {\n                clearInterval(timer);\n                return target;\n              }\n              return Math.floor(next"
+      },
+      {
+        "path": "pages\\NotFound.tsx",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "import React from 'react';\nimport { AlertTriangle, Home, ArrowLeft } from 'lucide-react';\nimport { Link } from 'react-router-dom';\n\nconst NotFound: React.FC = () => {\n  return (\n    <div className=\"min-h-screen flex items-center justify-center bg-dark\">\n      <div className=\"text-center max-w-md mx-auto px-4 sm:px-6 lg:px-8\">\n        <div className=\"bg-white/5 rounded-3xl p-8 border border-white/10 shadow-2xl shadow-primary/10\">\n          <div className=\"w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6\">\n            <AlertTriangle className=\"w-8 h-8 text-primary\" />\n          </div>\n          \n          <h1 className=\"text-6xl font-bold text-white mb-4\">404</h1>\n          <h2 className=\"text-2xl font-bold text-white mb-4\">Page Not Found</h2>\n          \n          <p className=\"text-slate-300 mb-8 leading-relaxed\">\n            Looks like you've wandered off the beaten path. Don't worry, \n            even the best insulation installers occasionally hit a "
+      },
+      {
+        "path": "pages\\Privacy.tsx",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "import React from 'react';\nimport { ShieldCheck, Lock, UserCheck } from 'lucide-react';\n\nconst Privacy: React.FC = () => {\n  return (\n    <div className=\"min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto\">\n      <div className=\"text-center mb-12\">\n        <div className=\"w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6\">\n          <ShieldCheck className=\"w-8 h-8 text-primary\" />\n        </div>\n        <h1 className=\"text-4xl font-bold text-white mb-4\">Privacy Policy</h1>\n        <p className=\"text-text-light\">Your privacy is important to us</p>\n      </div>\n\n      <div className=\"bg-white/5 rounded-2xl p-8 border border-white/10\">\n        <div className=\"prose prose-invert max-w-none\">\n          <p className=\"text-slate-300 mb-8\">\n            Elite Insulation Solutions is committed to protecting your privacy. This Privacy Policy explains how we collect, \n            use, and safeguard your information when you visit our website or contact"
+      },
+      {
+        "path": "pages\\Reviews.tsx",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "import React from 'react';\nimport { Star, MessageSquare, CheckCircle, Building2, Home, ArrowRight, ExternalLink, MapPin, Zap } from 'lucide-react';\nimport { Review } from '../types';\nimport { SubtleLineDivider, DecorativeWaveDivider, IconDivider } from '../components/SectionDividers';\n\nconst reviews: Review[] = [\n  {\n    id: 1,\n    name: \"Michael Thompson\",\n    role: \"Homeowner\",\n    project: \"Spray Foam Insulation\",\n    location: \"Tyler, TX\",\n    rating: 5,\n    text: \"The difference in our electric bill was immediate. The crew was professional, cleaned up perfectly, and the spray foam works like magic against the Tyler heat. Our AC is running half as much now.\",\n    date: \"2 weeks ago\"\n  },\n  {\n    id: 2,\n    name: \"Sarah Jenkins\",\n    role: \"Business Owner\",\n    project: \"Commercial Warehouse\",\n    location: \"Longview, TX\",\n    rating: 5,\n    text: \"We hired Elite for our 10,000 sq ft metal warehouse. It used to be an oven in there; now it's comfortable year-round. The installation w"
+      },
+      {
+        "path": "pages\\Services.tsx",
+        "violations": [
+          {
+            "severity": "HIGH",
+            "type": "ACCESSIBILITY",
+            "message": "Image missing alt text. Provide meaningful alt attributes for screen reader accessibility."
+          },
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "import React from 'react';\nimport { ArrowUpRight, Thermometer, Home, Building2, ShieldCheck, Zap, Droplet, Users, TrendingUp, Calendar, Clock, HardHat } from 'lucide-react';\nimport { Link } from 'react-router-dom';\nimport { SubtleLineDivider, DecorativeWaveDivider, IconDivider } from '../components/SectionDividers';\n\nconst Services: React.FC = () => {\n  return (\n    <div className=\"min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto\">\n      <div className=\"text-center mb-16\">\n        <h2 className=\"text-primary font-semibold tracking-wider uppercase text-sm mb-3\">Our Expertise</h2>\n        <h1 className=\"text-4xl md:text-5xl font-bold text-white mb-6\">Premium Insulation Services</h1>\n        <p className=\"text-text-light max-w-2xl mx-auto text-lg\">\n          We deliver cutting-edge thermal solutions designed to reduce energy consumption and improve indoor comfort for both residential and commercial properties.\n        </p>\n      </div>\n\n      {/* Comparison Table Section */"
+      },
+      {
+        "path": "pages\\Terms.tsx",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "import React from 'react';\nimport { FileText, Scale, Shield, Clock } from 'lucide-react';\n\nconst Terms: React.FC = () => {\n  return (\n    <div className=\"min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto\">\n      <div className=\"text-center mb-12\">\n        <div className=\"w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6\">\n          <FileText className=\"w-8 h-8 text-primary\" />\n        </div>\n        <h1 className=\"text-4xl font-bold text-white mb-4\">Terms of Service</h1>\n        <p className=\"text-text-light\">Please read these terms carefully</p>\n      </div>\n\n      <div className=\"bg-white/5 rounded-2xl p-8 border border-white/10\">\n        <div className=\"prose prose-invert max-w-none\">\n          <p className=\"text-slate-300 mb-8\">\n            By using Elite Insulation Solutions' website and services, you agree to these Terms of Service. \n            Please read them carefully before proceeding.\n          </p>\n\n          <h2 className=\"te"
+      },
+      {
+        "path": "pages\\Thanks.tsx",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "import React from 'react';\nimport { Link } from 'react-router-dom';\nimport { CheckCircle } from 'lucide-react';\n\nconst Thanks: React.FC = () => {\n  return (\n    <div className=\"min-h-screen bg-dark flex items-center justify-center px-4\">\n      <div className=\"max-w-md w-full text-center\">\n        <div className=\"flex justify-center mb-6\">\n          <CheckCircle className=\"w-20 h-20 text-primary\" />\n        </div>\n        <h1 className=\"text-3xl font-bold text-white mb-4\">\n          Thank You!\n        </h1>\n        <p className=\"text-slate-300 mb-8\">\n          Your message has been sent successfully. We'll get back to you shortly.\n        </p>\n        <Link\n          to=\"/\"\n          className=\"inline-block bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-8 rounded-lg transition-colors\"\n        >\n          Back to Home\n        </Link>\n      </div>\n    </div>\n  );\n};\n\nexport default Thanks;\n"
+      },
+      {
+        "path": "src\\App.tsx",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "import React, { useEffect, useState } from 'react';\nimport { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';\nimport Navbar from '@/components/Navbar';\nimport Footer from '@/components/Footer';\nimport Home from '@/pages/Home';\nimport Services from '@/pages/Services';\nimport Reviews from '@/pages/Reviews';\nimport Contact from '@/pages/Contact';\nimport Thanks from '@/pages/Thanks';\nimport About from '@/pages/About';\nimport Privacy from '@/pages/Privacy';\nimport Terms from '@/pages/Terms';\nimport NotFound from '@/pages/NotFound';\n\n// Scroll to top wrapper\nconst ScrollToTop = () => {\n  const { pathname } = useLocation();\n  useEffect(() => {\n    window.scrollTo(0, 0);\n  }, [pathname]);\n  return null;\n};\n\n// Scroll to top button component\nconst ScrollToTopButton: React.FC = () => {\n  const [isVisible, setIsVisible] = useState(false);\n\n  useEffect(() => {\n    const toggleVisibility = () => {\n      if (window.scrollY > 500) {\n        setIsVisible(true);\n      } else "
+      },
+      {
+        "path": "src\\main.tsx",
+        "violations": [],
+        "summary": "import React from 'react';\nimport ReactDOM from 'react-dom/client';\nimport App from './App';\nimport './index.css';\n\nconst rootElement = document.getElementById('root');\nif (!rootElement) {\n  throw new Error(\"Could not find root element to mount to\");\n}\n\nconst root = ReactDOM.createRoot(rootElement);\nroot.render(\n  <React.StrictMode>\n    <App />\n  </React.StrictMode>\n);\n"
+      },
+      {
+        "path": "src\\types.ts",
+        "violations": [],
+        "summary": "export interface NavItem {\n  label: string;\n  path: string;\n}\n\nexport interface ServiceItem {\n  id: string;\n  title: string;\n  description: string;\n  image: string;\n  features: string[];\n  gridArea?: string; // For Bento grid layout control\n}\n\nexport interface Review {\n  id: number;\n  name: string;\n  role: string;\n  rating: number;\n  text: string;\n  date: string;\n}\n\nexport enum FormStatus {\n  IDLE = 'IDLE',\n  SUBMITTING = 'SUBMITTING',\n  SUCCESS = 'SUCCESS',\n  ERROR = 'ERROR'\n}\n"
+      },
+      {
+        "path": "src\\components\\Footer.tsx",
+        "violations": [
+          {
+            "severity": "HIGH",
+            "type": "ACCESSIBILITY",
+            "message": "Image missing alt text. Provide meaningful alt attributes for screen reader accessibility."
+          },
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "import React from 'react';\nimport { Mail, Phone, MapPin, Award, CheckCircle, Users } from 'lucide-react';\n\nconst Footer: React.FC = () => {\n  return (\n    <footer className=\"bg-dark border-t border-white/10 pt-16 pb-12\">\n      <div className=\"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8\">\n        <div className=\"grid grid-cols-1 md:grid-cols-4 gap-8 mb-12\">\n          {/* Brand */}\n          <div className=\"md:col-span-1 space-y-4\">\n            <img \n              src=\"/brand-logo.jpeg\" \n              alt=\"GFB Insulation Logo\" \n              className=\"h-20 w-auto object-contain\"\n            />\n            <p className=\"text-text-light text-sm leading-relaxed max-w-xs\">\n              Providing top-tier energy efficiency solutions for East Texas homes and businesses. Licensed and Insured.\n            </p>\n            <div className=\"flex space-x-2\">\n              <div className=\"px-2 py-1 rounded border border-primary/30 bg-primary/10 text-xs text-primary font-medium\">\n                BBB Accr"
+      },
+      {
+        "path": "src\\components\\Navbar.tsx",
+        "violations": [
+          {
+            "severity": "HIGH",
+            "type": "ACCESSIBILITY",
+            "message": "Image missing alt text. Provide meaningful alt attributes for screen reader accessibility."
+          },
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "import React, { useState, useEffect } from 'react';\nimport { NavLink } from 'react-router-dom';\nimport { Menu, X } from 'lucide-react';\nimport { NavItem } from '@/types';\n\nconst navItems: NavItem[] = [\n  { label: 'Home', path: '/' },\n  { label: 'Services', path: '/services' },\n  { label: 'About', path: '/about' },\n  { label: 'Reviews', path: '/reviews' },\n  { label: 'Contact', path: '/contact' },\n];\n\nconst Navbar: React.FC = () => {\n  const [isOpen, setIsOpen] = useState(false);\n  const [scrolled, setScrolled] = useState(false);\n\n  useEffect(() => {\n    const handleScroll = () => {\n      setScrolled(window.scrollY > 20);\n    };\n    window.addEventListener('scroll', handleScroll);\n    return () => window.removeEventListener('scroll', handleScroll);\n  }, []);\n\n  const navClass = `fixed w-full z-50 transition-all duration-300 ${\n    scrolled || isOpen\n      ? 'bg-dark/95 backdrop-blur-xl shadow-xl border-b border-white/10'\n      : 'bg-dark/60 backdrop-blur-md'\n  }`;\n\n  return (\n    <nav c"
+      },
+      {
+        "path": "src\\components\\SectionDividers.tsx",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "import React from 'react';\n\nexport const SubtleLineDivider: React.FC = () => {\n  return (\n    <div className=\"w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent\" />\n  );\n};\n\nexport const DecorativeWaveDivider: React.FC = () => {\n  return (\n    <div className=\"relative h-16 overflow-hidden\">\n      <div className=\"absolute inset-0 bg-gradient-to-b from-dark/50 to-transparent\" />\n      <svg \n        className=\"absolute bottom-0 w-full\" \n        viewBox=\"0 0 1200 120\" \n        preserveAspectRatio=\"none\"\n      >\n        <path \n          d=\"M0,120 C300,80 600,100 900,60 C1050,40 1200,80 L1200,120 L0,120 Z\" \n          fill=\"currentColor\" \n          className=\"text-dark/30\" \n        />\n      </svg>\n    </div>\n  );\n};\n\ninterface IconDividerProps {\n  icon: React.ReactNode;\n  label?: string;\n}\n\nexport const IconDivider: React.FC<IconDividerProps> = ({ icon, label }) => {\n  return (\n    <div className=\"flex items-center justify-center py-8\">\n      <div className=\"w-16 h-px b"
+      },
+      {
+        "path": "src\\pages\\About.tsx",
+        "violations": [
+          {
+            "severity": "HIGH",
+            "type": "ACCESSIBILITY",
+            "message": "Image missing alt text. Provide meaningful alt attributes for screen reader accessibility."
+          },
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "import React from 'react';\nimport { ShieldCheck, Users, MapPin, Award, Clock, Truck, ArrowRight, Zap } from 'lucide-react';\nimport { SubtleLineDivider, DecorativeWaveDivider, IconDivider } from '@/components/SectionDividers';\n\nconst About: React.FC = () => {\n  return (\n    <div className=\"min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto\">\n      <div className=\"text-center mb-20\">\n        <h2 className=\"text-primary font-semibold tracking-wider uppercase text-sm mb-4\">Our Story</h2>\n        <h1 className=\"text-4xl md:text-5xl font-bold text-white mb-8 leading-tight\">Family-Owned Insulation Experts</h1>\n        <p className=\"text-text-light max-w-2xl mx-auto text-lg leading-[1.6]\">\n          Serving East Texas with quality insulation solutions since 2015. We're your neighbors, committed to making your home more comfortable and energy-efficient.\n        </p>\n      </div>\n\n      {/* Our Story Section */}\n      <section className=\"mb-28\">\n        <div className=\"grid grid-col"
+      },
+      {
+        "path": "src\\pages\\Contact.tsx",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "import React, { useState } from 'react';\nimport { Mail, Phone, MapPin, Send, Clock, Calendar, CheckCircle, ArrowRight, Navigation, CheckCircle2, XCircle, Zap } from 'lucide-react';\nimport { SubtleLineDivider, DecorativeWaveDivider, IconDivider } from '@/components/SectionDividers';\n\nconst Contact: React.FC = () => {\n  const [formState, setFormState] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');\n\n  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {\n    e.preventDefault();\n    setFormState('submitting');\n    \n    const form = e.currentTarget;\n    const formData = new FormData(form);\n    \n    try {\n      const response = await fetch(form.action, {\n        method: 'POST',\n        body: formData,\n        headers: {\n          'Accept': 'application/json'\n        }\n      });\n      \n      if (response.ok) {\n        setFormState('success');\n        form.reset();\n        setTimeout(() => setFormState('idle'), 5000);\n      } else {\n        setFormState('error"
+      },
+      {
+        "path": "src\\pages\\Home.tsx",
+        "violations": [
+          {
+            "severity": "HIGH",
+            "type": "ACCESSIBILITY",
+            "message": "Image missing alt text. Provide meaningful alt attributes for screen reader accessibility."
+          },
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "import React, { useState, useEffect } from 'react';\nimport { Link } from 'react-router-dom';\nimport { ArrowRight, CheckCircle2, Zap, DollarSign, ThermometerSnowflake, Wind, TrendingUp, Home as HomeIcon, Users, Droplet, Clock, Shield, ShieldCheck, AlertTriangle } from 'lucide-react';\nimport { SubtleLineDivider, DecorativeWaveDivider, IconDivider } from '@/components/SectionDividers';\n\nconst Home: React.FC = () => {\n  const [savingsCount, setSavingsCount] = useState(0);\n\n  useEffect(() => {\n    const observer = new IntersectionObserver(\n      ([entry]) => {\n        if (entry.isIntersecting) {\n          const target = 500;\n          const duration = 2000;\n          const increment = target / (duration / 16);\n          const timer = setInterval(() => {\n            setSavingsCount(prev => {\n              const next = prev + increment;\n              if (next >= target) {\n                clearInterval(timer);\n                return target;\n              }\n              return Math.floor(next)"
+      },
+      {
+        "path": "src\\pages\\NotFound.tsx",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "import React from 'react';\nimport { AlertTriangle, Home, ArrowLeft } from 'lucide-react';\nimport { Link } from 'react-router-dom';\n\nconst NotFound: React.FC = () => {\n  return (\n    <div className=\"min-h-screen flex items-center justify-center bg-dark\">\n      <div className=\"text-center max-w-md mx-auto px-4 sm:px-6 lg:px-8\">\n        <div className=\"bg-white/5 rounded-3xl p-8 border border-white/10 shadow-2xl shadow-primary/10\">\n          <div className=\"w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6\">\n            <AlertTriangle className=\"w-8 h-8 text-primary\" />\n          </div>\n          \n          <h1 className=\"text-6xl font-bold text-white mb-4\">404</h1>\n          <h2 className=\"text-2xl font-bold text-white mb-4\">Page Not Found</h2>\n          \n          <p className=\"text-slate-300 mb-8 leading-relaxed\">\n            Looks like you've wandered off the beaten path. Don't worry, \n            even the best insulation installers occasionally hit a "
+      },
+      {
+        "path": "src\\pages\\Privacy.tsx",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "import React from 'react';\nimport { ShieldCheck, Lock, UserCheck } from 'lucide-react';\n\nconst Privacy: React.FC = () => {\n  return (\n    <div className=\"min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto\">\n      <div className=\"text-center mb-12\">\n        <div className=\"w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6\">\n          <ShieldCheck className=\"w-8 h-8 text-primary\" />\n        </div>\n        <h1 className=\"text-4xl font-bold text-white mb-4\">Privacy Policy</h1>\n        <p className=\"text-text-light\">Your privacy is important to us</p>\n      </div>\n\n      <div className=\"bg-white/5 rounded-2xl p-8 border border-white/10\">\n        <div className=\"prose prose-invert max-w-none\">\n          <p className=\"text-slate-300 mb-8\">\n            Elite Insulation Solutions is committed to protecting your privacy. This Privacy Policy explains how we collect, \n            use, and safeguard your information when you visit our website or contact"
+      },
+      {
+        "path": "src\\pages\\Reviews.tsx",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "import React from 'react';\nimport { Star, MessageSquare, CheckCircle, Building2, Home, ArrowRight, ExternalLink, MapPin, Zap } from 'lucide-react';\nimport { Review } from '@/types';\nimport { SubtleLineDivider, DecorativeWaveDivider, IconDivider } from '@/components/SectionDividers';\n\nconst reviews: Review[] = [\n  {\n    id: 1,\n    name: \"Michael Thompson\",\n    role: \"Homeowner\",\n    project: \"Spray Foam Insulation\",\n    location: \"Tyler, TX\",\n    rating: 5,\n    text: \"The difference in our electric bill was immediate. The crew was professional, cleaned up perfectly, and the spray foam works like magic against the Tyler heat. Our AC is running half as much now.\",\n    date: \"2 weeks ago\"\n  },\n  {\n    id: 2,\n    name: \"Sarah Jenkins\",\n    role: \"Business Owner\",\n    project: \"Commercial Warehouse\",\n    location: \"Longview, TX\",\n    rating: 5,\n    text: \"We hired Elite for our 10,000 sq ft metal warehouse. It used to be an oven in there; now it's comfortable year-round. The installation was"
+      },
+      {
+        "path": "src\\pages\\Services.tsx",
+        "violations": [
+          {
+            "severity": "HIGH",
+            "type": "ACCESSIBILITY",
+            "message": "Image missing alt text. Provide meaningful alt attributes for screen reader accessibility."
+          },
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "import React from 'react';\nimport { ArrowUpRight, Thermometer, Home, Building2, ShieldCheck, Zap, Droplet, Users, TrendingUp, Calendar, Clock, HardHat } from 'lucide-react';\nimport { Link } from 'react-router-dom';\nimport { SubtleLineDivider, DecorativeWaveDivider, IconDivider } from '@/components/SectionDividers';\n\nconst Services: React.FC = () => {\n  return (\n    <div className=\"min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto\">\n      <div className=\"text-center mb-16\">\n        <h2 className=\"text-primary font-semibold tracking-wider uppercase text-sm mb-3\">Our Expertise</h2>\n        <h1 className=\"text-4xl md:text-5xl font-bold text-white mb-6\">Premium Insulation Services</h1>\n        <p className=\"text-text-light max-w-2xl mx-auto text-lg\">\n          We deliver cutting-edge thermal solutions designed to reduce energy consumption and improve indoor comfort for both residential and commercial properties.\n        </p>\n      </div>\n\n      {/* Comparison Table Section */}"
+      },
+      {
+        "path": "src\\pages\\Terms.tsx",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "import React from 'react';\nimport { FileText, Scale, Shield, Clock } from 'lucide-react';\n\nconst Terms: React.FC = () => {\n  return (\n    <div className=\"min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto\">\n      <div className=\"text-center mb-12\">\n        <div className=\"w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6\">\n          <FileText className=\"w-8 h-8 text-primary\" />\n        </div>\n        <h1 className=\"text-4xl font-bold text-white mb-4\">Terms of Service</h1>\n        <p className=\"text-text-light\">Please read these terms carefully</p>\n      </div>\n\n      <div className=\"bg-white/5 rounded-2xl p-8 border border-white/10\">\n        <div className=\"prose prose-invert max-w-none\">\n          <p className=\"text-slate-300 mb-8\">\n            By using Elite Insulation Solutions' website and services, you agree to these Terms of Service. \n            Please read them carefully before proceeding.\n          </p>\n\n          <h2 className=\"te"
+      },
+      {
+        "path": "src\\pages\\Thanks.tsx",
+        "violations": [
+          {
+            "severity": "LOW",
+            "type": "MAINTAINABILITY",
+            "message": "Magic number detected. Consider defining named constants for clarity."
+          }
+        ],
+        "summary": "import React from 'react';\nimport { Link } from 'react-router-dom';\nimport { CheckCircle } from 'lucide-react';\n\nconst Thanks: React.FC = () => {\n  return (\n    <div className=\"min-h-screen bg-dark flex items-center justify-center px-4\">\n      <div className=\"max-w-md w-full text-center\">\n        <div className=\"flex justify-center mb-6\">\n          <CheckCircle className=\"w-20 h-20 text-primary\" />\n        </div>\n        <h1 className=\"text-3xl font-bold text-white mb-4\">\n          Thank You!\n        </h1>\n        <p className=\"text-slate-300 mb-8\">\n          Your message has been sent successfully. We'll get back to you shortly.\n        </p>\n        <Link\n          to=\"/\"\n          className=\"inline-block bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-8 rounded-lg transition-colors\"\n        >\n          Back to Home\n        </Link>\n      </div>\n    </div>\n  );\n};\n\nexport default Thanks;\n"
+      }
+    ],
+    "summary": {
+      "total_files_scanned": 36,
+      "total_violations": 41,
+      "severity_breakdown": {
+        "CRITICAL": 0,
+        "HIGH": 10,
+        "MEDIUM": 0,
+        "LOW": 31
+      },
+      "violation_types": {
+        "MAINTAINABILITY": 30,
+        "CLEAN_CODE": 1,
+        "ACCESSIBILITY": 10
+      }
+    }
+  }
+}
