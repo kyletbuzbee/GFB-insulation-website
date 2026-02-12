@@ -62,7 +62,7 @@ const About: React.FC = () => {
       <SubtleLineDivider />
 
       {/* Safety Promise - Ghost Cards for Variety */}
-      <section className="mb-28 bg-gradient-to-br from-dark/50 to-dark/50 rounded-3xl p-8 border border-white/10">
+      <section className="mb-28 bg-linear-to-br from-dark/50 to-dark/50 rounded-3xl p-8 border border-white/10">
         <div className="text-center mb-12">
           <h3 className="text-2xl font-bold text-white mb-4 leading-tight">Our Safety Promise</h3>
           <p className="text-slate-300 max-w-3xl mx-auto leading-[1.6]">
@@ -111,10 +111,10 @@ const About: React.FC = () => {
         <div className="max-w-4xl mx-auto">
           <div className="space-y-6">
             <div className="flex items-center space-x-6 p-6 hover:bg-white/5 rounded-xl transition-all duration-300 group">
-              <div className="flex-shrink-0 w-14 h-14 bg-primary/20 rounded-full flex items-center justify-center group-hover:bg-primary/30 transition-colors">
+              <div className="shrink-0 w-14 h-14 bg-primary/20 rounded-full flex items-center justify-center group-hover:bg-primary/30 transition-colors">
                 <MapPin className="w-7 h-7 text-primary" />
               </div>
-              <div className="flex-grow">
+              <div className="grow">
                 <h4 className="text-xl font-bold text-white mb-1">Tyler</h4>
                 <p className="text-text-light">Our home base and primary service area</p>
               </div>
@@ -122,21 +122,22 @@ const About: React.FC = () => {
             </div>
             
             <div className="flex items-center space-x-6 p-6 hover:bg-white/5 rounded-xl transition-all duration-300 group">
-              <div className="flex-shrink-0 w-14 h-14 bg-primary/20 rounded-full flex items-center justify-center group-hover:bg-primary/30 transition-colors">
+              <div className="shrink-0 w-14 h-14 bg-primary/20 rounded-full flex items-center justify-center group-hover:bg-primary/30 transition-colors">
                 <MapPin className="w-7 h-7 text-primary" />
               </div>
-              <div className="flex-grow">
+              <div className="grow">
                 <h4 className="text-xl font-bold text-white mb-1">Longview</h4>
                 <p className="text-text-light">Greater metro area and surrounding communities</p>
               </div>
               <ArrowRight className="w-5 h-5 text-primary opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
             
+            {/* FIX: Duplication removed here */}
             <div className="flex items-center space-x-6 p-6 hover:bg-white/5 rounded-xl transition-all duration-300 group">
-              <div className="flex-shrink-0 w-14 h-14 bg-primary/20 rounded-full flex items-center justify-center group-hover:bg-primary/30 transition-colors">
+              <div className="shrink-0 w-14 h-14 bg-primary/20 rounded-full flex items-center justify-center group-hover:bg-primary/30 transition-colors">
                 <MapPin className="w-7 h-7 text-primary" />
               </div>
-              <div className="flex-grow">
+              <div className="grow">
                 <h4 className="text-xl font-bold text-white mb-1">Jacksonville</h4>
                 <p className="text-text-light">Cherokee County and surrounding areas</p>
               </div>
@@ -144,10 +145,10 @@ const About: React.FC = () => {
             </div>
             
             <div className="flex items-center space-x-6 p-6 hover:bg-white/5 rounded-xl transition-all duration-300 group">
-              <div className="flex-shrink-0 w-14 h-14 bg-primary/20 rounded-full flex items-center justify-center group-hover:bg-primary/30 transition-colors">
+              <div className="shrink-0 w-14 h-14 bg-primary/20 rounded-full flex items-center justify-center group-hover:bg-primary/30 transition-colors">
                 <MapPin className="w-7 h-7 text-primary" />
               </div>
-              <div className="flex-grow">
+              <div className="grow">
                 <h4 className="text-xl font-bold text-white mb-1">Lindale</h4>
                 <p className="text-text-light">Smith County and nearby communities</p>
               </div>

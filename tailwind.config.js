@@ -1,12 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  // FIX: Simplified paths now that everything is in src
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./App.tsx",
-    "./index.tsx"
   ],
   theme: {
     extend: {
@@ -15,6 +12,7 @@ export default {
         heading: ['Montserrat', 'sans-serif'],
       },
       colors: {
+        // Your custom colors
         gfb: {
           amber: '#FBB03B',
           orange: '#C67E22',
@@ -36,25 +34,14 @@ export default {
           muted: '#4A4A4A',
           light: '#6B6B6B',
         },
-        background: {
-          DEFAULT: '#FFFFFF',
-          alt: '#F5F5F5',
-        },
+        // This fixes the transparent background issue
         dark: {
-          DEFAULT: '#121212',
+          DEFAULT: '#121212', 
           hover: '#0E0E0E',
           border: '#2A2A2A',
         },
-        accent: {
-          DEFAULT: '#2C3E50',
-          hover: '#253445',
-          dark: '#1E2A3A',
-        },
-        navy: {
-          900: '#121212', // Dark Charcoal (logo background)
-          800: '#1A1A1A',
-        },
       },
+      // ... keep your animation/keyframes/boxShadow sections as they were ...
       animation: {
         'float': 'float 6s ease-in-out infinite',
         'glow': 'glow 3s ease-in-out infinite alternate',

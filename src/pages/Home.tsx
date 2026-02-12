@@ -48,7 +48,7 @@ const Home: React.FC = () => {
             alt={ALT_TEXT.heroHome}
             className="w-full h-full object-cover opacity-30"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/80 to-dark/40" />
+          <div className="absolute inset-0 bg-linear-to-t from-dark via-dark/80 to-dark/40" />
           {/* Animated Glow Spots */}
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse" />
           <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-pulse delay-700" />
@@ -181,7 +181,7 @@ const Home: React.FC = () => {
       <IconDivider icon={<Zap className="w-4 h-4 text-primary" />} label="Savings" />
 
       {/* Energy Savings Counter Section */}
-      <section id="savings-counter" className="py-20 bg-gradient-to-br from-dark via-dark to-dark">
+      <section id="savings-counter" className="py-20 bg-linear-to-br from-dark via-dark to-dark">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-12 shadow-2xl shadow-primary/20">
             <div className="flex items-center justify-center space-x-4 mb-6">
@@ -229,7 +229,7 @@ const Home: React.FC = () => {
           {/* Vertical Timeline */}
           <div className="relative max-w-4xl mx-auto">
             {/* Timeline Line */}
-            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-primary/50 to-transparent md:-translate-x-1/2"></div>
+            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-linear-to-b from-primary via-primary/50 to-transparent md:-translate-x-1/2"></div>
 
             {/* Step 1 - Left */}
             <div className="relative mb-12 md:mb-0">

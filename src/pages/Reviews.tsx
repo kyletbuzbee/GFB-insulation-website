@@ -132,7 +132,7 @@ const ReviewsPage: React.FC = () => {
             {/* Author Info with Verified Badge */}
             <div className="flex items-center justify-between border-t border-white/5 pt-4">
               <div className="flex items-center space-x-2">
-                <div className="w-10 h-10 bg-gradient-to-br from-primary/30 to-blue-500/30 rounded-full flex items-center justify-center">
+                <div className="w-10 h-10 bg-linear-to-br from-primary/30 to-blue-500/30 rounded-full flex items-center justify-center">
                   <span className="text-white font-semibold text-sm">
                     {review.name.split(' ').map(n => n[0]).join('')}
                   </span>

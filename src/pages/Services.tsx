@@ -73,14 +73,14 @@ const Services: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-min">
         
         {/* Featured Card: Spray Foam */}
-        <div className="group md:col-span-2 md:row-span-2 relative rounded-3xl overflow-hidden bg-dark border border-white/5 shadow-2xl min-h-[500px] md:min-h-[600px]">
+        <div className="group md:col-span-2 md:row-span-2 relative rounded-3xl overflow-hidden bg-dark border border-white/5 shadow-2xl min-h-125 md:min-h-150">
           <div className="absolute inset-0">
             <img 
               src={SPRAY_FOAM_IMAGE}
               alt={ALT_TEXT.sprayFoam}
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-40"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/60 to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-t from-dark via-dark/60 to-transparent" />
           </div>
           
           <div className="absolute bottom-0 left-0 p-8 md:p-12 w-full">
@@ -121,14 +121,14 @@ const Services: React.FC = () => {
         </div>
 
         {/* Card 2: Attic Blown-in */}
-        <div className="group relative rounded-3xl overflow-hidden bg-dark border border-white/5 shadow-xl md:col-span-1 min-h-[300px] md:min-h-[290px]">
+        <div className="group relative rounded-3xl overflow-hidden bg-dark border border-white/5 shadow-xl md:col-span-1 min-h-75 md:min-h-72.5">
            <div className="absolute inset-0">
             <img 
               src={ATTIC_BLOWN_IN_IMAGE}
               alt={ALT_TEXT.atticBlownIn}
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-50"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-t from-dark via-dark/40 to-transparent" />
           </div>
           <div className="absolute bottom-0 left-0 p-8 w-full">
             <div className="p-3 bg-white/10 rounded-xl w-fit backdrop-blur-md mb-4">
@@ -156,14 +156,14 @@ const Services: React.FC = () => {
         </div>
 
         {/* Card 3: Commercial Retrofit */}
-        <div className="group relative rounded-3xl overflow-hidden bg-dark border border-white/5 shadow-xl md:col-span-1 min-h-[300px] md:min-h-[290px]">
+        <div className="group relative rounded-3xl overflow-hidden bg-dark border border-white/5 shadow-xl md:col-span-1 min-h-75 md:min-h-72.5">
           <div className="absolute inset-0">
             <img 
               src={COMMERCIAL_RETROFIT_IMAGE}
               alt={ALT_TEXT.commercialRetrofit}
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-50"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-t from-dark via-dark/40 to-transparent" />
           </div>
           <div className="absolute bottom-0 left-0 p-8 w-full">
             <div className="p-3 bg-white/10 rounded-xl w-fit backdrop-blur-md mb-4">

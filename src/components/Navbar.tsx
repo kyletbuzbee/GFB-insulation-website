@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-import { NavItem } from '@/types';
-import { BRAND_LOGO, ALT_TEXT } from '@/constants/images';
+import { NavItem } from '../types';
+import { BRAND_LOGO, ALT_TEXT } from '../constants/images';
 
 const navItems: NavItem[] = [
   { label: 'Home', path: '/' },
@@ -52,7 +52,7 @@ const Navbar: React.FC = () => {
                 className={({ isActive }) =>
                   `text-sm font-medium tracking-wide transition-all duration-300 relative ${
                     isActive 
-                      ? 'text-primary after:content-[""] after:absolute after:bottom-[-8px] after:left-0 after:w-full after:h-0.5 after:bg-primary after:shadow-[0_0_15px_rgba(251,176,59,0.5)]' 
+                      ? 'text-primary after:content-[""] after:absolute after:-bottom-2 after:left-0 after:w-full after:h-0.5 after:bg-primary after:shadow-[0_0_15px_rgba(251,176,59,0.5)]' 
                       : 'text-slate-300 hover:text-primary hover:shadow-[0_0_10px_rgba(251,176,59,0.3)] hover:-translate-y-0.5'
                   }`
                 }

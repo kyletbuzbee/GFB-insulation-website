@@ -9,7 +9,7 @@ export interface ServiceItem {
   description: string;
   image: string;
   features: string[];
-  gridArea?: string; // For Bento grid layout control
+  gridArea?: string;
 }
 
 export interface Review {
@@ -19,6 +19,9 @@ export interface Review {
   rating: number;
   text: string;
   date: string;
+  // FIX: Added these two properties to match your data
+  project: string;
+  location: string;
 }
 
 export enum FormStatus {

@@ -4,7 +4,8 @@
  */
 
 // Brand Assets
-export const BRAND_LOGO = '/brand-logo.jpeg';
+// NOTE: Ensure you have a file named 'brand-logo.svg' in your 'public' folder!
+export const BRAND_LOGO = '/brand-logo.svg';
 
 // Hero & Home Page Images
 export const HERO_HOME_IMAGE = 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000';
@@ -18,7 +19,8 @@ export const COMMERCIAL_RETROFIT_IMAGE = 'https://images.unsplash.com/photo-1504
 export const TEAM_IMAGE = 'https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&q=80&w=800';
 
 // Map Configuration
-export const GOOGLE_MAPS_EMBED_URL = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2686384.916666667!2d-96.5!3d32.35!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8649eb0e5c5e6c17%3A0x6e7c1e6c5e5e5e5e!2sTyler%2C%20TX!5e0!3m2!1sen!2sus!4v1704067200000!5m2!1sen!2sus';
+// FIX: Updated to a valid Google Maps Embed URL for Tyler, TX
+export const GOOGLE_MAPS_EMBED_URL = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d107387.89202660136!2d-95.36831032865955!3d32.35126019999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8649c66914611481%3A0x629c42c75908e08d!2sTyler%2C%20TX!5e0!3m2!1sen!2sus!4v1709920000000!5m2!1sen!2sus';
 
 // Image Alt Text (for accessibility)
 export const ALT_TEXT = {

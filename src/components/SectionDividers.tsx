@@ -2,14 +2,15 @@ import React from 'react';
 
 export const SubtleLineDivider: React.FC = () => {
   return (
-    <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+    <div className="w-full h-px bg-linear-to-r from-transparent via-white/10 to-transparent" />
   );
 };
 
 export const DecorativeWaveDivider: React.FC = () => {
   return (
     <div className="relative h-16 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-dark/50 to-transparent" />
+      {/* Gradient fade to smooth the transition */}
+      <div className="absolute inset-0 bg-linear-to-b from-dark/50 to-transparent" />
       <svg 
         className="absolute bottom-0 w-full" 
         viewBox="0 0 1200 120" 
@@ -18,7 +19,9 @@ export const DecorativeWaveDivider: React.FC = () => {
         <path 
           d="M0,120 C300,80 600,100 900,60 C1050,40 1200,80 L1200,120 L0,120 Z" 
           fill="currentColor" 
-          className="text-dark/30" 
+          // FIX: Changed to white/5 so it's visible on dark bg. 
+          // Previous dark/30 was invisible against bg-dark.
+          className="text-white/5" 
         />
       </svg>
     </div>

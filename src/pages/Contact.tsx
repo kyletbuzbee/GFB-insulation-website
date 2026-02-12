@@ -273,7 +273,7 @@ const Contact: React.FC = () => {
             <div className="grid grid-cols-2 gap-2">
               {serviceAreas.map((area) => (
                 <div key={area.city} className="flex items-center space-x-2 text-sm">
-                  <MapPin className="w-4 h-4 text-primary flex-shrink-0" />
+                  <MapPin className="w-4 h-4 text-primary shrink-0" />
                   <span className="text-slate-300">{area.city}</span>
                   <span className="text-text-muted text-xs">{area.distance}</span>
                 </div>
