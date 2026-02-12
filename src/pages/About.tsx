@@ -1,6 +1,7 @@
 import React from 'react';
 import { ShieldCheck, Users, MapPin, Award, Clock, Truck, ArrowRight, Zap } from 'lucide-react';
 import { SubtleLineDivider, DecorativeWaveDivider, IconDivider } from '../components/SectionDividers';
+import { TEAM_IMAGE, ALT_TEXT } from '@/constants/images';
 
 const About: React.FC = () => {
   return (
@@ -9,7 +10,7 @@ const About: React.FC = () => {
         <h2 className="text-primary font-semibold tracking-wider uppercase text-sm mb-4">Our Story</h2>
         <h1 className="text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">Family-Owned Insulation Experts</h1>
         <p className="text-text-light max-w-2xl mx-auto text-lg leading-[1.6]">
-          Serving East Texas with quality insulation solutions since 2015. We're your neighbors, committed to making your home more comfortable and energy-efficient.
+          Serving East Texas with quality insulation solutions since 2015. We're your neighbors at GFB Insulation, committed to making your home more comfortable and energy-efficient.
         </p>
       </div>
 
@@ -19,7 +20,7 @@ const About: React.FC = () => {
           <div>
             <h3 className="text-2xl font-bold text-white mb-8 leading-tight">Our Journey</h3>
             <p className="text-slate-300 mb-6 leading-[1.6]">
-              Elite Insulation Solutions was founded by a team of East Texas natives who saw a need for reliable, high-quality insulation services in our community. 
+              GFB Insulation was founded by a team of East Texas natives who saw a need for reliable, high-quality insulation services in our community. 
               Growing up in Tyler, we experienced firsthand the challenges of Texas weather - scorching summers and unpredictable winters.
             </p>
             <p className="text-slate-300 mb-8 leading-[1.6]">
@@ -46,8 +47,8 @@ const About: React.FC = () => {
           <div className="relative">
             <div className="bg-white/5 rounded-2xl p-8 border border-white/10 shadow-2xl shadow-primary/10">
               <img 
-                src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&q=80&w=800" 
-                alt="Professional insulation contractors working on a residential project in East Texas" 
+                src={TEAM_IMAGE}
+                alt={ALT_TEXT.team}
                 className="w-full h-80 object-cover rounded-lg mb-4 shadow-lg"
               />
               <p className="text-slate-300 text-center italic leading-relaxed">

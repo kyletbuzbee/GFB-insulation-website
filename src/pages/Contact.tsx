@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, Clock, Calendar, CheckCircle, ArrowRight, Navigation, CheckCircle2, XCircle, Zap } from 'lucide-react';
 import { SubtleLineDivider, DecorativeWaveDivider, IconDivider } from '@/components/SectionDividers';
+import { GOOGLE_MAPS_EMBED_URL } from '@/constants/images';
 
 const Contact: React.FC = () => {
   const [formState, setFormState] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
@@ -238,7 +239,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="text-sm font-medium text-text-light mb-1">Email</h4>
-                  <p className="text-white">info@eliteinsulation.com</p>
+                  <p className="text-white">info@gfbinsulation.com</p>
                 </div>
               </div>
               
@@ -288,8 +289,8 @@ const Contact: React.FC = () => {
             </h3>
             <div className="relative w-full h-64 rounded-xl overflow-hidden bg-dark">
               <iframe
-                title="Elite Insulation Solutions - Tyler TX Service Area"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2686384.916666667!2d-96.5!3d32.35!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8649eb0e5c5e6c17%3A0x6e7c1e6c5e5e5e5e!2sTyler%2C%20TX!5e0!3m2!1sen!2sus!4v1704067200000!5m2!1sen!2sus"
+                title="GFB Insulation - Tyler TX Service Area"
+                src={GOOGLE_MAPS_EMBED_URL}
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

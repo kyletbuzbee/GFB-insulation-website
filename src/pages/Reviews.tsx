@@ -21,7 +21,7 @@ const reviews: Review[] = [
     project: "Commercial Warehouse",
     location: "Longview, TX",
     rating: 5,
-    text: "We hired Elite for our 10,000 sq ft metal warehouse. It used to be an oven in there; now it's comfortable year-round. The installation was completed in two days with minimal disruption to our operations.",
+    text: "We hired GFB Insulation for our 10,000 sq ft metal warehouse. It used to be an oven in there; now it's comfortable year-round. The installation was completed in two days with minimal disruption to our operations.",
     date: "1 month ago"
   },
   {
@@ -41,7 +41,7 @@ const reviews: Review[] = [
     project: "Spray Foam + Air Sealing",
     location: "Jacksonville, TX",
     rating: 5,
-    text: "Elite Insulation transformed our drafty 1970s home. The team was punctual, courteous, and thorough. Our utility bill dropped by 30% in the first month. Highly recommend!",
+    text: "GFB Insulation transformed our drafty 1970s home. The team was punctual, courteous, and thorough. Our utility bill dropped by 30% in the first month. Highly recommend!",
     date: "3 weeks ago"
   },
   {
@@ -51,7 +51,7 @@ const reviews: Review[] = [
     project: "Multi-Family Complex",
     location: "Tyler, TX",
     rating: 5,
-    text: "Managing 50+ units, I need reliable contractors. Elite has insulated 12 of our buildings and I couldn't be happier. Professional, on-time, and excellent results every time.",
+    text: "Managing 50+ units, I need reliable contractors. GFB Insulation has insulated 12 of our buildings and I couldn't be happier. Professional, on-time, and excellent results every time.",
     date: "1 month ago"
   },
   {
@@ -61,7 +61,7 @@ const reviews: Review[] = [
     project: "Crawl Space Encapsulation",
     location: "Nacogdoches, TX",
     rating: 5,
-    text: "Our crawl space was always damp and musty. Elite encapsulated it with spray foam and added a dehumidifier. Now the whole house feels cleaner and our floors are warmer in winter.",
+    text: "Our crawl space was always damp and musty. GFB Insulation encapsulated it with spray foam and added a dehumidifier. Now the whole house feels cleaner and our floors are warmer in winter.",
     date: "6 weeks ago"
   }
 ];
@@ -72,7 +72,7 @@ const ReviewsPage: React.FC = () => {
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Client Success Stories</h1>
         <p className="text-text-light max-w-xl mx-auto text-lg">
-          See why homeowners and businesses across East Texas trust Elite Insulation Solutions.
+          See why homeowners and businesses across East Texas trust GFB Insulation.
         </p>
         
         {/* Overall Rating */}
@@ -162,7 +162,7 @@ const ReviewsPage: React.FC = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <a 
-            href="https://www.google.com/search?q=Elite+Insulation+Solutions+Tyler+TX" 
+            href="https://www.google.com/search?q=GFB+Insulation+Tyler+TX"
             target="_blank" 
             rel="noopener noreferrer"
             className="group flex items-center justify-between p-4 bg-dark/50 border border-white/10 rounded-xl hover:border-blue-500/50 transition-all hover:-translate-y-1"

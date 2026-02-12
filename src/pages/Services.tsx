@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowUpRight, Thermometer, Home, Building2, ShieldCheck, Zap, Droplet, Users, TrendingUp, Calendar, Clock, HardHat } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { SubtleLineDivider, DecorativeWaveDivider, IconDivider } from '../components/SectionDividers';
+import { SPRAY_FOAM_IMAGE, ATTIC_BLOWN_IN_IMAGE, COMMERCIAL_RETROFIT_IMAGE, ALT_TEXT } from '@/constants/images';
 
 const Services: React.FC = () => {
   return (
@@ -75,8 +76,8 @@ const Services: React.FC = () => {
         <div className="group md:col-span-2 md:row-span-2 relative rounded-3xl overflow-hidden bg-dark border border-white/5 shadow-2xl min-h-[500px] md:min-h-[600px]">
           <div className="absolute inset-0">
             <img 
-              src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80&w=1200" 
-              alt="Spray foam insulation being applied to attic rafters in a Tyler Texas home" 
+              src={SPRAY_FOAM_IMAGE}
+              alt={ALT_TEXT.sprayFoam}
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-40"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/60 to-transparent" />
@@ -123,8 +124,8 @@ const Services: React.FC = () => {
         <div className="group relative rounded-3xl overflow-hidden bg-dark border border-white/5 shadow-xl md:col-span-1 min-h-[300px] md:min-h-[290px]">
            <div className="absolute inset-0">
             <img 
-              src="https://images.unsplash.com/photo-1593019808390-377319522199?auto=format&fit=crop&q=80&w=600" 
-              alt="Blown-in attic insulation installation in East Texas home" 
+              src={ATTIC_BLOWN_IN_IMAGE}
+              alt={ALT_TEXT.atticBlownIn}
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-50"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent" />
@@ -158,8 +159,8 @@ const Services: React.FC = () => {
         <div className="group relative rounded-3xl overflow-hidden bg-dark border border-white/5 shadow-xl md:col-span-1 min-h-[300px] md:min-h-[290px]">
           <div className="absolute inset-0">
             <img 
-              src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=600" 
-              alt="Commercial warehouse insulation retrofit in Tyler Texas" 
+              src={COMMERCIAL_RETROFIT_IMAGE}
+              alt={ALT_TEXT.commercialRetrofit}
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-50"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent" />

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Mail, Phone, MapPin, Award, CheckCircle, Users } from 'lucide-react';
+import { BRAND_LOGO, ALT_TEXT } from '@/constants/images';
 
 const Footer: React.FC = () => {
   return (
@@ -9,8 +10,8 @@ const Footer: React.FC = () => {
           {/* Brand */}
           <div className="md:col-span-1 space-y-4">
             <img 
-              src="/brand-logo.jpeg" 
-              alt="GFB Insulation Logo" 
+              src={BRAND_LOGO}
+              alt={ALT_TEXT.brandLogo}
               className="h-20 w-auto object-contain"
             />
             <p className="text-text-light text-sm leading-relaxed max-w-xs">
@@ -39,11 +40,11 @@ const Footer: React.FC = () => {
                   <span className="text-xs text-text-muted">Mon-Fri 8am-6pm</span>
                 </div>
               </a>
-              <a href="mailto:info@eliteinsulation.com" className="flex items-center space-x-3 text-text-light hover:text-primary transition-colors group">
+              <a href="mailto:info@gfbinsulation.com" className="flex items-center space-x-3 text-text-light hover:text-primary transition-colors group">
                 <div className="p-2 bg-white/5 rounded-lg group-hover:bg-primary/20 transition-colors">
                   <Mail className="h-5 w-5" />
                 </div>
-                <span>info@eliteinsulation.com</span>
+                <span>info@gfbinsulation.com</span>
               </a>
               <div className="flex items-center space-x-3 text-text-light">
                 <div className="p-2 bg-white/5 rounded-lg">
@@ -123,7 +124,7 @@ const Footer: React.FC = () => {
         <div className="border-t border-white/5 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-text-muted text-sm">
-              &copy; {new Date().getFullYear()} Elite Insulation Solutions. All rights reserved.
+              &copy; {new Date().getFullYear()} GFB Insulation. All rights reserved.
             </p>
             <div className="flex space-x-6 text-text-light text-sm">
               <span className="hover:text-primary transition-colors cursor-pointer">Privacy Policy</span>

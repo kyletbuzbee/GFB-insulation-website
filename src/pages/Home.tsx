@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle2, Zap, DollarSign, ThermometerSnowflake, Wind, TrendingUp, Home as HomeIcon, Users, Droplet, Clock, Shield, ShieldCheck, AlertTriangle } from 'lucide-react';
 import { SubtleLineDivider, DecorativeWaveDivider, IconDivider } from '@/components/SectionDividers';
+import { HERO_HOME_IMAGE, ALT_TEXT } from '@/constants/images';
 
 const Home: React.FC = () => {
   const [savingsCount, setSavingsCount] = useState(0);
@@ -43,8 +44,8 @@ const Home: React.FC = () => {
         {/* Ambient Background */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000"
-            alt="Modern energy efficient home exterior with proper insulation in Tyler Texas"
+            src={HERO_HOME_IMAGE}
+            alt={ALT_TEXT.heroHome}
             className="w-full h-full object-cover opacity-30"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/80 to-dark/40" />
@@ -68,7 +69,7 @@ const Home: React.FC = () => {
           </h1>
           
           <p className="max-w-2xl mx-auto text-lg md:text-xl text-slate-300 mb-10 leading-[1.6]">
-            Upgrade your property with Elite Insulation Solutions. We specialize in high-performance spray foam and attic insulation for maximum energy efficiency.
+            Upgrade your property with GFB Insulation. We specialize in high-performance spray foam and attic insulation for maximum energy efficiency.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -193,7 +194,7 @@ const Home: React.FC = () => {
               ${savingsCount}
             </div>
             <p className="text-slate-300 text-lg leading-[1.6]">
-              For Tyler homeowners who upgrade their insulation with Elite Insulation Solutions
+              For Tyler homeowners who upgrade their insulation with GFB Insulation
             </p>
             <div className="mt-8 flex items-center justify-center space-x-4 text-text-light text-sm">
               <span className="flex h-2 w-2 rounded-full bg-primary mr-2 animate-pulse"></span>
@@ -416,7 +417,7 @@ const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-primary font-semibold tracking-wider uppercase text-sm mb-4">Our Promise</h2>
-            <h3 className="text-3xl md:text-4xl font-bold text-white mb-8 leading-tight">Why Elite Insulation Solutions?</h3>
+            <h3 className="text-3xl md:text-4xl font-bold text-white mb-8 leading-tight">Why GFB Insulation?</h3>
             <p className="text-text-light max-w-2xl mx-auto text-lg leading-[1.6]">
               We bring decades of experience, cutting-edge technology, and a commitment to excellence 
               to every insulation project in East Texas.

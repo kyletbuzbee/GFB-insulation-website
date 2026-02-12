@@ -15,7 +15,7 @@ const Privacy: React.FC = () => {
       <div className="bg-white/5 rounded-2xl p-8 border border-white/10">
         <div className="prose prose-invert max-w-none">
           <p className="text-slate-300 mb-8">
-            Elite Insulation Solutions is committed to protecting your privacy. This Privacy Policy explains how we collect, 
+            GFB Insulation is committed to protecting your privacy. This Privacy Policy explains how we collect, 
             use, and safeguard your information when you visit our website or contact us for services.
           </p>
 
@@ -80,7 +80,7 @@ const Privacy: React.FC = () => {
           </p>
           <div className="bg-dark/50 rounded-lg p-6 border border-white/10">
             <p className="text-slate-300 mb-2">
-              <strong>Email:</strong> info@eliteinsulation.com
+              <strong>Email:</strong> info@gfbinsulation.com
             </p>
             <p className="text-slate-300 mb-2">
               <strong>Phone:</strong> (903) 555-0123

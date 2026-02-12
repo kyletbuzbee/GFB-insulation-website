@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { NavItem } from '@/types';
+import { BRAND_LOGO, ALT_TEXT } from '@/constants/images';
 
 const navItems: NavItem[] = [
   { label: 'Home', path: '/' },
@@ -36,8 +37,8 @@ const Navbar: React.FC = () => {
           {/* Logo */}
           <NavLink to="/" className="flex items-center group">
             <img 
-              src="/brand-logo.jpeg" 
-              alt="GFB Insulation Logo" 
+              src={BRAND_LOGO}
+              alt={ALT_TEXT.brandLogo}
               className="h-16 w-auto object-contain group-hover:opacity-90 transition-opacity"
             />
           </NavLink>
