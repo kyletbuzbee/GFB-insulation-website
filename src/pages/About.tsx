@@ -1,6 +1,6 @@
 import React from 'react';
 import { ShieldCheck, Users, MapPin, Award, Clock, Truck, ArrowRight, Zap } from 'lucide-react';
-import { SubtleLineDivider, DecorativeWaveDivider, IconDivider } from '@/components/SectionDividers';
+import { SubtleLineDivider, DecorativeWaveDivider, IconDivider } from '../components/SectionDividers';
 
 const About: React.FC = () => {
   return (

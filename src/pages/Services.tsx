@@ -1,7 +1,7 @@
 import React from 'react';
 import { ArrowUpRight, Thermometer, Home, Building2, ShieldCheck, Zap, Droplet, Users, TrendingUp, Calendar, Clock, HardHat } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { SubtleLineDivider, DecorativeWaveDivider, IconDivider } from '@/components/SectionDividers';
+import { SubtleLineDivider, DecorativeWaveDivider, IconDivider } from '../components/SectionDividers';
 
 const Services: React.FC = () => {
   return (

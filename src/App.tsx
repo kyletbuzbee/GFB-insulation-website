@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import Home from '@/pages/Home';
-import Services from '@/pages/Services';
-import Reviews from '@/pages/Reviews';
-import Contact from '@/pages/Contact';
-import Thanks from '@/pages/Thanks';
-import About from '@/pages/About';
-import Privacy from '@/pages/Privacy';
-import Terms from '@/pages/Terms';
-import NotFound from '@/pages/NotFound';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import Home from './pages/Home';
+import Services from './pages/Services';
+import Reviews from './pages/Reviews';
+import Contact from './pages/Contact';
+import Thanks from './pages/Thanks';
+import About from './pages/About';
+import Privacy from './pages/Privacy';
+import Terms from './pages/Terms';
+import NotFound from './pages/NotFound';
 
 // Scroll to top wrapper
 const ScrollToTop = () => {
