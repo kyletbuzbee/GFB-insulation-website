@@ -17,7 +17,7 @@ export const DecorativeWaveDivider: React.FC = () => {
         preserveAspectRatio="none"
       >
         <path 
-          d="M0,120 C300,80 600,100 900,60 C1050,40 1200,80 L1200,120 L0,120 Z" 
+          d="M0,120 C300,80 600,100 900,60 C1050,40 1150,60 1200,80 L1200,120 L0,120 Z" 
           fill="currentColor" 
           // FIX: Changed to white/5 so it's visible on dark bg. 
           // Previous dark/30 was invisible against bg-dark.
