@@ -1,0 +1,74 @@
+
+================================================================================
+FILE_BEGIN: index.html
+TYPE: HTML
+SIZE: 2297 bytes
+================================================================================
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GFB Insulation | Tyler, TX | Spray Foam & Attic Insulation</title>
+    <meta name="description" content="GFB Insulation - Professional spray foam and blown-in insulation services in Tyler, TX and East Texas. Energy-efficient insulation for homes and commercial buildings. Licensed, insured, and trusted since 2015." />
+    <meta name="keywords" content="insulation Tyler TX, spray foam insulation, blown-in insulation, commercial insulation, energy efficient, attic insulation, East Texas insulation, GFB Insulation" />
+    <meta name="author" content="GFB Insulation" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://gfbinsulation.com/" />
+    <meta property="og:title" content="GFB Insulation | Tyler, TX" />
+    <meta property="og:description" content="Professional spray foam and blown-in insulation services in Tyler, TX and East Texas. Save up to 30% on energy costs." />
+    <meta property="og:image" content="https://gfbinsulation.com/og-image.jpg" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://gfbinsulation.com/" />
+    <meta property="twitter:title" content="GFB Insulation | Tyler, TX" />
+    <meta property="twitter:description" content="Professional spray foam and blown-in insulation services in Tyler, TX and East Texas. Save up to 30% on energy costs." />
+    <meta property="twitter:image" content="https://gfbinsulation.com/og-image.jpg" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://gfbinsulation.com/" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="./src/main.tsx"></script>
+  </body>
+</html>
+
+[FILE_END: index.html]
+################################################################################
+
+================================================================================
+FILE_BEGIN: public\404.html
+TYPE: HTML
+SIZE: 403 bytes
+================================================================================
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Not Found</title>
+    <script>
+        // Redirect to index.html for SPA routing
+        window.location.href = '/GFB-insulation-website/' + window.location.search;
+    </script>
+</head>
+<body>
+    <p>Redirecting to GFB Insulation...</p>
+</body>
+</html>
+
+
+[FILE_END: public\404.html]
+################################################################################
